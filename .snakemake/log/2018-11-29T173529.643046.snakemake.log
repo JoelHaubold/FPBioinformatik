@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 11 of /home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile:
+Missing input files for rule kallisto_quant:
+in = genome.idx
