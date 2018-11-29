@@ -1,3 +1,5 @@
 language: python
 pyhton:
   - "3.6"
+script:
+    - pytest
