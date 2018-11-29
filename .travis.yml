@@ -1,0 +1,3 @@
+language: python
+pyhton:
+  - "3.6"
