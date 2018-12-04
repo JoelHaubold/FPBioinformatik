@@ -1,0 +1,11 @@
+testing: True
+sorted: False
+samples:
+  a:
+    - "a.chr21.1.fq"
+    - "a.chr21.2.fq"
+    - "treated"
+  b:
+    - "b.chr21.1.fq"
+    - "b.chr21.2.fq"
+    - "untreated"
