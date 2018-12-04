@@ -6,5 +6,6 @@ To-Do:
 
 Software die von Anfang an gebraucht wird:
 - Ana-/Miniconda
+- Snakemake
 - Python
 - Pyyaml
