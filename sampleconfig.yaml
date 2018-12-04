@@ -1,5 +1,4 @@
 testing: True
-sorted: False
 samples:
   a:
     - "a.chr21.1.fq"
