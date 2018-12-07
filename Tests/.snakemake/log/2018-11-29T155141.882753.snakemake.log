@@ -1,4 +1,0 @@
-WorkflowError in line 1 of /home/dickel00/FP/Bioinfo/FPBioinformatik/Tests/Snakefile:
-The Python 3 package 'ftputil' must be installed to use SFTP remote() file functionality. No module named 'ftputil'
-  File "/home/dickel00/FP/Bioinfo/FPBioinformatik/Tests/Snakefile", line 1, in <module>
-  File "/home/dickel00/miniconda3/envs/snakemake-tutorial/lib/python3.6/site-packages/snakemake/remote/FTP.py", line 23, in <module>
