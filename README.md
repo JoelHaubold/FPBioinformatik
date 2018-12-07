@@ -9,3 +9,6 @@ Software die von Anfang an gebraucht wird:
 - Snakemake
 - Python
 - (Pyyaml)
+
+Für Submodule beim Clonen angeben:
+git clone https://github.com/JoelHaubold/FPBioinformatik.git --recursive
