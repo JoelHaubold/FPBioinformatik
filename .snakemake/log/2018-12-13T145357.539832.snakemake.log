@@ -1,0 +1,35 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	kallisto_index
+	1	kallisto_quant
+	2
+
+[Thu Dec 13 14:53:57 2018]
+rule kallisto_index:
+    input: Tests/ref/transcriptome.chr21.fa
+    output: genome.idx
+    jobid: 1
+
+[Thu Dec 13 14:54:01 2018]
+Finished job 1.
+1 of 2 steps (50%) done
+
+[Thu Dec 13 14:54:01 2018]
+rule kallisto_quant:
+    input: genome.idx, Tests/reads/a.chr21.1.fq, Tests/reads/a.chr21.2.fq
+    output: quantOutput
+    jobid: 0
+
+ImproperOutputException in line 11 of /home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule kallisto_quant:
+quantOutput
+Removing output files of failed job kallisto_quant since they might be corrupted:
+quantOutput
+Skipped removing non-empty directory quantOutput
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/log/2018-12-13T145357.539832.snakemake.log
