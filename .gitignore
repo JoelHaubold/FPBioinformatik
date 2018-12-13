@@ -2,5 +2,4 @@
 /.snakemake/
 # Alles in quantOutput
 /quantOutput/
-genome.idx
 
