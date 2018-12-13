@@ -1,6 +1,6 @@
 rule kallisto_index:
 	input:
-		"Tests/ref/genome.chr21.fa"
+		"Tests/ref/transcriptome.chr21.fa"
 	output:
 		"genome.idx"
 	conda:
@@ -14,6 +14,6 @@ rule kallisto_quant:
 		fq1 = "Tests/reads/a.chr21.1.fq", 
 		fq2 = "Tests/reads/a.chr21.2.fq" 
 	output:
-		"quantOutput"
+		directory("quantOutput")
 	shell:
 		"kallisto quant -i {input.inp} -o {output} {input.fq1} {input.fq2}" 
