@@ -1,6 +1,0 @@
-# Alles in .snakemake
-/.snakemake/
-# Alles in quantOutput
-/quantOutput/
-genome.idx
-

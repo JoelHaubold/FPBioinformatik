@@ -1,0 +1,5 @@
+Building DAG of jobs...
+InputFunctionException in line 26 of /home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile:
+KeyError: 'the label [{a,] is not in the [index]'
+Wildcards:
+sample={a,
