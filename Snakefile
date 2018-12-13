@@ -1,6 +1,21 @@
+import pandas as pd
+
+configfile: "config.yaml"
+
+testdr = ""
+if config["testing"]:
+	testdr = "Tests/"
+
+
+samples = pd.read_table(config["samples"], index_col="sample")
+
+def get_fq(wildcards):
+	return samples.loc[wildcards.sample, ["fq1","fq2"]].dropna()
+		
+
 rule kallisto_index:
 	input:
-		"Tests/ref/genome.chr21.fa"
+		testdr+"ref/transcriptome.chr21.fa"
 	output:
 		"genome.idx"
 	conda:
@@ -10,10 +25,9 @@ rule kallisto_index:
 
 rule kallisto_quant:
 	input:
-		inp="genome.idx", 
-		fq1 = "Tests/reads/a.chr21.1.fq", 
-		fq2 = "Tests/reads/a.chr21.2.fq" 
+		fq = get_fq,
+		inp = "genome.idx"		
 	output:
-		"quantOutput"
+		directory("quantOutput/{sample}")
 	shell:
-		"kallisto quant -i {input.inp} -o {output} {input.fq1} {input.fq2}" 
+		"kallisto quant -i {input.inp} -o {output} {input.fq[0]} {input.fq[1]}" 

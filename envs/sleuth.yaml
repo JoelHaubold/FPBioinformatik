@@ -1,7 +1,6 @@
 channels:
   - conda-forge
   - bioconda
-  - johanneskoester
   - icm-iconics
 dependencies:
   - r-sleuth =0.30

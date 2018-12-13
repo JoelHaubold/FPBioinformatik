@@ -1,0 +1,5 @@
+# Testingflag
+testing: True
+# path to samples
+samples: samplesheet.tsv
+
