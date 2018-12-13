@@ -1,2 +1,4 @@
-# Alle logs in .snakemake
-/.snakemake/*
+# Alles in .snakemake
+/.snakemake/
+# Alles in quantOutput
+/quantOutput/
