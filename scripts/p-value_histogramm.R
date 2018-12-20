@@ -11,3 +11,5 @@ hist(table$pval,
      border="black", 
      col="black")
 #dev.off()
+
+print("p-value_Histogramm successfully created at .plots/p-values_histogramm.pdf")

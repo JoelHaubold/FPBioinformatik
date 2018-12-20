@@ -1,5 +1,5 @@
 sample	fq1	fq2	condition
 a	Tests/reads/a.chr21.1.fq	Tests/reads/a.chr21.2.fq	treated
-b	Tests/reads/a.chr21.1.fq	Tests/reads/a.chr21.2.fq	treated
-c	Tests/reads/b.chr21.1.fq	Tests/reads/b.chr21.2.fq	untreated
+c	Tests/reads/a.chr21.1.fq	Tests/reads/a.chr21.2.fq	treated
+b	Tests/reads/b.chr21.1.fq	Tests/reads/b.chr21.2.fq	untreated
 d	Tests/reads/b.chr21.1.fq	Tests/reads/b.chr21.2.fq	untreated
