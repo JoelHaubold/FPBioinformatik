@@ -1,19 +1,33 @@
+#!/usr/bin/env python3
+
 import pandas as pd
 import yaml
 
 
 #Get Sampledict
 #If Testing is active add Test directory
-con = open("config.yaml", "r")
-config = yaml.load(con)
+try:
+	con = open("config.yaml", "r")
+	config = yaml.load(con)
+except FileNotFoundError:
+	print("The file config.yaml was not found.\nPlease check if file is present in the same directory!")
+	exit(1)
+
 cwd = ""
 if config['testing']:
 	cwd += "Tests/"
 cwd += "reads/"
 
 #Read Yamlfile
-stream = open("sampleconfig.yaml", "r")
-doc = yaml.load(stream)
+try:
+	stream = open("sampleconfig.yaml", "r")
+	doc = yaml.load(stream)
+except FileNotFoundError:
+	print("The file config.yaml was not found.\nPlease check if file is present in the same directory!")
+	exit(1)
+except yaml.scanner.ScannerError:
+	print("The file sampleconfig.yaml could not be read.\nPlease check if syntax is correct!")
+	exit(1)
 
 #Import samples as stated in Configfile
 samples = doc['samples']
