@@ -41,3 +41,7 @@ rule sleuth_lrt:
 		"envs/sleuth.yaml"
 	shell:
 		"Rscript sleuth1.R" 
+
+rule boxplot_counts:
+	input:
+		""

@@ -6,8 +6,6 @@
 scripts/.snakemake*
 !resources
 !resources/*
-!envs
-!envs/*
 !environment.yaml
 !LICENSE.md
 !README.md
