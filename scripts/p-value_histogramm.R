@@ -8,6 +8,6 @@ hist(table$pval,
      main="Histogram of p-values", 
      xlab="p-values",
      ylab="count",
-     border="blue", 
+     border="black", 
      col="black")
-dev.off()
+#dev.off()

@@ -45,3 +45,14 @@ rule sleuth_lrt:
 rule boxplot_counts:
 	input:
 		""
+
+
+rule pvalue_hist:
+	input:
+		"sleuth_results.tsv"
+	output:
+		"plots/p-values_histogramm.pdf"
+	conda:
+		"envs/sleuth.yaml"
+	shell:
+		"Rscript scripts/p-value_histogramm.R"
