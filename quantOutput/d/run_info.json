@@ -8,6 +8,6 @@
 	"p_unique": 11.2,
 	"kallisto_version": "0.44.0",
 	"index_version": 10,
-	"start_time": "Thu Dec 20 14:34:18 2018",
-	"call": "kallisto quant -i genome.idx -o quantOutput/b1 -b 100 Tests/reads/b.chr21.1.fq Tests/reads/b.chr21.2.fq"
+	"start_time": "Thu Dec 20 15:18:00 2018",
+	"call": "kallisto quant -i genome.idx -o quantOutput/d -b 100 Tests/reads/b.chr21.1.fq Tests/reads/b.chr21.2.fq"
 }

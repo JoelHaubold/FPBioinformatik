@@ -27,7 +27,7 @@ models(so)
 
 sleuth_table <- sleuth_results(so, 'reduced:full', 'lrt', show_all = FALSE)
 sleuth_significant <- dplyr::filter(sleuth_table, qval <= 0.05)
-head(sleuth_significant, 20)
+print(head(sleuth_significant, 20))
 
 plot_bootstrap(so, "ENST00000291572", units = "est_counts", color_by = "condition")
 plot_bootstrap(so, "ENST00000474114", units = "est_counts", color_by = "condition")
