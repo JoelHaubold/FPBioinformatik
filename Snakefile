@@ -30,4 +30,14 @@ rule kallisto_quant:
 	output:
 		directory("quantOutput/{sample}")
 	shell:
-		"kallisto quant -i {input.inp} -o {output} -b 100 {input.fq[0]} {input.fq[1]}" 
+		"kallisto quant -i {input.inp} -o {output} -b 100 {input.fq[0]} {input.fq[1]}"
+
+rule sleuth_lrt:
+	input:
+		"quantOutput"
+	output:
+		"sleuth_results.tsv"
+	conda:
+		"envs/sleuth.yaml"
+	shell:
+		"Rscript sleuth1.R" 

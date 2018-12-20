@@ -1,0 +1,11 @@
+prefix=/home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: XCB Present
+Description: XCB Present Extension
+Version: 1.13
+Requires.private: xcb xcb-randr xcb-xfixes xcb-sync
+Libs: -L${libdir} -lxcb-present
+Cflags: -I${includedir}

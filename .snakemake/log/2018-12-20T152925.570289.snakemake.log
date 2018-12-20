@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in line 34 of /home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile:
+Wildcards in input files cannot be determined from output files:
+'sample'

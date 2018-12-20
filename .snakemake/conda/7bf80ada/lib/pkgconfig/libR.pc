@@ -1,0 +1,10 @@
+rhome=/home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada/lib/R
+rlibdir=${rhome}/lib
+rincludedir=/home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada/lib/R/include
+
+Name: libR
+Description: R as a library
+Version: 3.5.1
+Libs: -Wl,--export-dynamic -fopenmp  -Wl,-rpath,/home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada/lib -L/home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada/lib -Wl,-rpath-link,/home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada/lib -L${rlibdir} -lR
+Cflags: -I${rincludedir} -I${rincludedir}
+Libs.private:

@@ -1,0 +1,28 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	sleuth_lrt
+	1
+
+[Thu Dec 20 15:46:09 2018]
+rule sleuth_lrt:
+    input: quantOutput
+    output: Rplots.pdf
+    jobid: 0
+
+[Thu Dec 20 15:46:11 2018]
+Error in rule sleuth_lrt:
+    jobid: 0
+    output: Rplots.pdf
+
+RuleException:
+CalledProcessError in line 43 of /home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile:
+Command ' set -euo pipefail;  Rscript sleuth1.R ' returned non-zero exit status 1.
+  File "/home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile", line 43, in __rule_sleuth_lrt
+  File "/home/dickel00/miniconda3/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/log/2018-12-20T154608.721654.snakemake.log
