@@ -1,4 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 1 of /home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile:
-Missing input files for rule kallisto_index:
-Tests/genome.chr21.fa

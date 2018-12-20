@@ -1,3 +1,0 @@
-ModuleNotFoundError in line 1 of /home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile:
-No module named 'pandas'
-  File "/home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile", line 1, in <module>

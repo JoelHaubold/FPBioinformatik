@@ -1,3 +1,0 @@
-AttributeError in line 17 of /home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile:
-'str' object has no attribute 'dir'
-  File "/home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile", line 17, in <module>
