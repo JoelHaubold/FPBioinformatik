@@ -7,3 +7,11 @@ samples:
     - "b.chr21.1.fq"
     - "b.chr21.2.fq"
     - "untreated"
+  a1:
+    - "a.chr21.1.fq"
+    - "a.chr21.2.fq"
+    - "treated"
+  b1:
+    - "b.chr21.1.fq"
+    - "b.chr21.2.fq"
+    - "untreated"

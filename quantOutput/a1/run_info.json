@@ -1,0 +1,13 @@
+{
+	"n_targets": 2457,
+	"n_bootstraps": 100,
+	"n_processed": 4857,
+	"n_pseudoaligned": 1292,
+	"n_unique": 576,
+	"p_pseudoaligned": 26.6,
+	"p_unique": 11.9,
+	"kallisto_version": "0.44.0",
+	"index_version": 10,
+	"start_time": "Thu Dec 20 14:33:44 2018",
+	"call": "kallisto quant -i genome.idx -o quantOutput/a1 -b 100 Tests/reads/a.chr21.1.fq Tests/reads/a.chr21.2.fq"
+}

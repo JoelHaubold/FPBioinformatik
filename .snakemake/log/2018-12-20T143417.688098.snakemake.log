@@ -1,0 +1,20 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	kallisto_quant
+	1
+
+[Thu Dec 20 14:34:18 2018]
+rule kallisto_quant:
+    input: Tests/reads/b.chr21.1.fq, Tests/reads/b.chr21.2.fq, genome.idx
+    output: quantOutput/b1
+    jobid: 0
+    wildcards: sample=b1
+
+[Thu Dec 20 14:34:19 2018]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/log/2018-12-20T143417.688098.snakemake.log
