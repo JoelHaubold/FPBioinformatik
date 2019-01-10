@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	sleuth_lrt
+	1
+
+[Thu Jan 10 15:30:14 2019]
+rule sleuth_lrt:
+    input: quantOutput
+    output: sleuthResults/sleuth_results.tsv
+    jobid: 0
+
+Activating conda environment: /home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada
+[Thu Jan 10 15:30:17 2019]
+Error in rule sleuth_lrt:
+    jobid: 0
+    output: sleuthResults/sleuth_results.tsv
+    conda-env: /home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada
+
+RuleException:
+CalledProcessError in line 49 of /home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile:
+Command 'source activate /home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada; set -euo pipefail;  Rscript sleuth1.R ' returned non-zero exit status 1.
+  File "/home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile", line 49, in __rule_sleuth_lrt
+  File "/home/dickel00/miniconda3/envs/snakemake-tutorial/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/log/2019-01-10T153014.194289.snakemake.log

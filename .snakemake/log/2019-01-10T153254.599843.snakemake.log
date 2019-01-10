@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 41 of /home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile:
+Missing input files for rule sleuth_lrt:
+quantOutput

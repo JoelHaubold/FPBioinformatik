@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Creating conda environment envs/kallisto.yaml...
+Downloading remote packages.
+Environment for envs/kallisto.yaml created (location: .snakemake/conda/5221b034)
+Using shell: /usr/bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	kallisto_index
+	1
+
+[Thu Jan 10 14:58:07 2019]
+rule kallisto_index:
+    input: Tests/ref/transcriptome.chr21.fa
+    output: genome.idx
+    jobid: 0
+
+Activating conda environment: /home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/5221b034
+[Thu Jan 10 14:58:11 2019]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/log/2019-01-10T145800.356782.snakemake.log

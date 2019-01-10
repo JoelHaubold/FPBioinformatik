@@ -1,0 +1,11 @@
+prefix=/home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: Xdmcp
+Description: X Display Manager Control Protocol library
+Version: 1.1.2
+Requires: xproto
+Cflags: -I${includedir}
+Libs: -L${libdir} -lXdmcp

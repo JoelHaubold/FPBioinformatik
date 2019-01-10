@@ -1,0 +1,5 @@
+Building DAG of jobs...
+InputFunctionException in line 32 of /home/dickel00/FP/Bioinfo/FPBioinformatik/Snakefile:
+TypeError: get_input() takes 0 positional arguments but 1 was given
+Wildcards:
+sample=b

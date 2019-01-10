@@ -1,0 +1,13 @@
+prefix=/home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada
+exec_prefix=/home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada
+libdir=/home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada/lib
+includedir=/home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada/include
+
+Name: harfbuzz
+Description: HarfBuzz text shaping library ICU integration
+Version: 1.9.0
+
+Requires: harfbuzz
+Requires.private: icu-uc
+Libs: -L${libdir} -lharfbuzz-icu
+Cflags: -I${includedir}/harfbuzz

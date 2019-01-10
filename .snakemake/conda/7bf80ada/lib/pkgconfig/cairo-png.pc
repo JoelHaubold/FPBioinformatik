@@ -1,0 +1,12 @@
+prefix=/home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: cairo-png
+Description: PNG functions for cairo graphics library
+Version: 1.14.12
+
+Requires: cairo libpng
+Libs:  
+Cflags: -I${includedir}/cairo 

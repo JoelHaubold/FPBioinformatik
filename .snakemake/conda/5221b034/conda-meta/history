@@ -1,0 +1,11 @@
+==> 2019-01-10 14:58:07 <==
+# cmd: /home/dickel00/miniconda3/bin/conda-env create --file /home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/5221b034.yaml --prefix /home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/5221b034
+# conda version: 4.5.12
++bioconda::kallisto-0.44.0-hdf51.8.17_1
++conda-forge::hdf5-1.8.17-11
++conda-forge::libgcc-7.2.0-h69d50b8_2
++conda-forge::libgcc-ng-7.2.0-hdf63c60_3
++conda-forge::libgfortran-3.0.0-1
++conda-forge::libstdcxx-ng-7.2.0-hdf63c60_3
++conda-forge::zlib-1.2.11-h470a237_4
+# update specs: ['kallisto=0.44', 'hdf5=1.8.17']

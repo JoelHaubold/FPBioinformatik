@@ -1,0 +1,15 @@
+prefix=/home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+appdefaultdir=/home/dickel00/FP/Bioinfo/FPBioinformatik/.snakemake/conda/7bf80ada/share/X11/app-defaults
+datarootdir=${prefix}/share
+errordbdir=${datarootdir}/X11
+
+Name: Xt
+Description: X Toolkit Library
+Version: 1.1.5
+Requires: xproto x11
+Requires.private: ice sm
+Cflags: -I${includedir}
+Libs: -L${libdir} -lXt
