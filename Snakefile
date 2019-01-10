@@ -55,7 +55,7 @@ rule boxplot_counts:
 
 rule pvalue_hist:
 	input:
-		"sleuth_results.tsv"
+		"sleuthResults/sleuth_results.tsv"
 	output:
 		"plots/p-values_histogramm.pdf"
 	conda:
