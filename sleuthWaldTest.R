@@ -34,6 +34,7 @@ print(head(sleuth_significant, 20))
 
 write.table(sleuth_table, file='sleuthResults/sleuth_wald_results.tsv', quote=FALSE, sep='\t', col.names = NA)
 
+
 # plot_bootstrap(so, "ENST00000291572", units = "est_counts", color_by = "condition")
 # plot_bootstrap(so, "ENST00000474114", units = "est_counts", color_by = "condition")
 # plot_bootstrap(so, "ENST00000491703", units = "est_counts", color_by = "condition")

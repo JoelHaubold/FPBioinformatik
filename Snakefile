@@ -32,7 +32,7 @@ rule kallisto_index:
 rule kallisto_quant:
 	input:
 		fq = get_fq,
-		inp = get_input
+		inp = get_input()
 	output:
 		directory("quantOutput/{sample}")
 	shell:
@@ -40,7 +40,7 @@ rule kallisto_quant:
 
 rule sleuth_lrt:
 	input:
-		"quantOutput"
+		directory("quantOutput")
 	output:
 		"sleuthResults/sleuth_results.tsv"
 	conda:
