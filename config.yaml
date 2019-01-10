@@ -2,4 +2,8 @@
 testing: True
 # path to samples
 samples: samplesheet.tsv
-
+# path to reference
+reference: Tests/ref/transcriptome.chr21.fa
+#kallisto index flag and path to kallistoIndex (if flag true)
+indexFlag: False
+indexPath: genome.idx

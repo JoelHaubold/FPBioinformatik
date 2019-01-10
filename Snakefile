@@ -15,7 +15,8 @@ def get_fq(wildcards):
 
 rule kallisto_index:
 	input:
-		testdr+"ref/transcriptome.chr21.fa"
+		config["reference"]
+		#testdr+"ref/transcriptome.chr21.fa"
 	output:
 		"genome.idx"
 	conda:
@@ -26,7 +27,10 @@ rule kallisto_index:
 rule kallisto_quant:
 	input:
 		fq = get_fq,
-		inp = "genome.idx"		
+		if config["indexFlag"]:
+			config["indexPath"]
+		else:
+			inp = "genome.idx"		
 	output:
 		directory("quantOutput/{sample}")
 	shell:
