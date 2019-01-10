@@ -40,7 +40,7 @@ rule kallisto_quant:
 
 rule sleuth_lrt:
 	input:
-		"quantOutput"
+		directory("quantOutput")
 	output:
 		"sleuthResults/sleuth_results.tsv"
 	conda:
