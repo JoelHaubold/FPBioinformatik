@@ -48,6 +48,16 @@ rule sleuth_lrt:
 	shell:
 		"Rscript sleuth1.R" 
 
+rule sleuth_wt:
+	input:
+		"quantOutput"
+	output:
+		"sleuthResults/sleuth_wald_results.tsv"
+	conda:
+		"envs/sleuth.yaml"
+	shell:
+		"Rscript sleuthWaldTest.R"
+
 rule boxplot_counts:
 	input:
 		""
