@@ -1,15 +1,1 @@
-!scripts
-!scripts/*
-!scripts/common
-!scripts/common/*
-scripts/.snakemake*
-!resources
-!resources/*
-!environment.yaml
-!LICENSE.md
-!README.md
-!rules
-!rules/*
-!.gitignore
-!.gitattributes
-
+/.snakemake/

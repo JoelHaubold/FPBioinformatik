@@ -32,7 +32,7 @@ rule kallisto_index:
 rule kallisto_quant:
 	input:
 		fq = get_fq,
-		inp = get_input
+		inp = get_input()
 	output:
 		directory("quantOutput/{sample}")
 	shell:
