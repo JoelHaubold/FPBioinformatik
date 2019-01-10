@@ -13,6 +13,11 @@ def get_fq(wildcards):
 	return samples.loc[wildcards.sample, ["fq1","fq2"]].dropna()
 		
 
+def get_input():
+	if config["indexFlag"]:
+		return config["indexPath"]
+	return "genome.idx"	
+
 rule kallisto_index:
 	input:
 		config["reference"]
@@ -27,10 +32,7 @@ rule kallisto_index:
 rule kallisto_quant:
 	input:
 		fq = get_fq,
-		if config["indexFlag"]:
-			config["indexPath"]
-		else:
-			inp = "genome.idx"		
+		inp = get_input
 	output:
 		directory("quantOutput/{sample}")
 	shell:
@@ -40,7 +42,7 @@ rule sleuth_lrt:
 	input:
 		"quantOutput"
 	output:
-		"sleuth_results.tsv"
+		"sleuthResults/sleuth_results.tsv"
 	conda:
 		"envs/sleuth.yaml"
 	shell:
