@@ -1,6 +1,7 @@
 channels:
-  - conda-forge
+  - conda-forge/label/cf201901
   - bioconda
 dependencies:
   - kallisto =0.44
   - hdf5 =1.8.17
+
