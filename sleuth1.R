@@ -4,6 +4,8 @@ suppressMessages({
 sample_id = dir(file.path(".", "quantOutput"))
 sample_id
 sample_sheet = read.table("samplesheet.tsv", header = TRUE, stringsAsFactors = FALSE)
+#allign sample_sheet sample order with file explorer order
+sample_sheet = sample_sheet[order(sample_sheet$sample),]
 print(sample_sheet)
 kal_dirs <- file.path(".", "quantOutput", sample_id)
 kal_dirs

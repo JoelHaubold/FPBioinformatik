@@ -1,13 +1,18 @@
 import pandas as pd
 
+
 configfile: "config.yaml"
 
 testdr = ""
 if config["testing"]:
 	testdr = "Tests/"
 
-
+#To get fq Wildcards
 samples = pd.read_table(config["samples"], index_col="sample")
+ 
+SAMPLES = pd.read_table(config["samples"])
+SAMPLES = SAMPLES[SAMPLES.columns[0]]
+
 
 def get_fq(wildcards):
 	return samples.loc[wildcards.sample, ["fq1","fq2"]].dropna()
@@ -40,7 +45,8 @@ rule kallisto_quant:
 
 rule sleuth_lrt:
 	input:
-		directory("quantOutput")
+		test=expand("quantOutput/{sample1}", sample1=SAMPLES)
+		#directory("quantOutput")
 	output:
 		"sleuthResults/sleuth_results.tsv"
 	conda:
@@ -55,7 +61,7 @@ rule boxplot_counts:
 
 rule pvalue_hist:
 	input:
-		"sleuthResults/sleuth_results.tsv"
+		directory("sleuthResults/sleuth_results.tsv")
 	output:
 		"plots/p-values_histogramm.pdf"
 	conda:
