@@ -26,7 +26,7 @@ palette ={"green":"g","orange":"orange","red":"r", "black":"k"}
 plot = sns.scatterplot(x = "b",y = "qval",data = samples,hue="color",palette = palette)
 for row in samples.index:
 	if samples.loc[row,"color"] == "green":
-		plot.text(samples.loc[row,"b"]+0.05, samples.loc[row,"qval"]+0.05, "An annotation", horizontalalignment='left', size='small', color='black')#, weight='semibold')
+		plot.text(samples.loc[row,"b"]+0.05, samples.loc[row,"qval"]+0.05, samples.loc[row,"target_id"], horizontalalignment='left', size='small', color='black')#, weight='semibold')
 #figure = plot.get_figure()
 plot.set(xlabel='beta_value', ylabel='-log10(q_value)')
 plot.get_figure().savefig("plots/qvsbeta_values_volcanoPlot.pdf")
