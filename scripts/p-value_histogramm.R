@@ -1,6 +1,7 @@
-path <- file.path(".", "sleuth_results.tsv")
+path <- file.path(".", "sleuthResults/sleuth_results.tsv")
 savepath <- file.path(".", "plots")
 table <- read.table(path, header = TRUE, stringsAsFactors = FALSE)
+print(table)
 
 pdf("plots/p-values_histogramm.pdf")
 #hist(table$pval)
