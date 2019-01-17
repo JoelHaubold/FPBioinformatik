@@ -68,10 +68,19 @@ rule boxplot_counts:
 	input:
 		""
 
+rule volcano_plot:
+	input:
+		"sleuthResults/sleuth_results.tsv"
+	output:
+		"plots/qvsbeta_values_volcanoPlot.pdf"
+	conda:
+		"envs/sleuth.yaml"
+	shell:
+		"python scripts/qvsbeta_values_volcanoPlot.py"
 
 rule pvalue_hist:
 	input:
-		directory("sleuthResults/sleuth_results.tsv")
+		"sleuthResults/sleuth_results.tsv"
 	output:
 		"plots/p-values_histogramm.pdf"
 	conda:
