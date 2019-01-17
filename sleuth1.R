@@ -1,6 +1,10 @@
 suppressMessages({
   library("sleuth")
 })
+#TODO In conda rule machen 
+source("http://bioconductor.org/biocLite.R")
+biocLite("biomaRt")
+
 sample_id = dir(file.path(".", "quantOutput"))
 sample_id
 sample_sheet = read.table("samplesheet.tsv", header = TRUE, stringsAsFactors = FALSE)
@@ -14,8 +18,16 @@ table <- dplyr :: select(sample_sheet, sample = sample, condition = condition)
 table <- dplyr :: mutate(table, path = kal_dirs)
 print(table)
 
+mart <- biomaRt::useMart(biomart = "ENSEMBL_MART_ENSEMBL",
+                         dataset = "hsapiens_gene_ensembl",
+                         host = 'ensembl.org')
+t2g <- biomaRt::getBM(attributes = c("ensembl_transcript_id", "ensembl_gene_id",
+                                     "external_gene_name"), mart = mart)
+t2g <- dplyr::rename(t2g, target_id = ensembl_transcript_id,
+                     ens_gene = ensembl_gene_id, ext_gene = external_gene_name)
+
 print("pre sleuth stuff")
-so <- sleuth_prep(table, extra_bootstrap_summary = TRUE)
+so <- sleuth_prep(table, extra_bootstrap_summary = TRUE, target_mapping = t2g)
 print("prep done")
 print("----------------------------------------------------------------------")
 matrix <- sleuth_to_matrix(so, "obs_norm", "tpm")
@@ -30,15 +42,14 @@ so <- sleuth_lrt(so, 'reduced', 'full')
 print("lrt done")
 models(so)
 
+
 sleuth_table <- sleuth_results(so, 'reduced:full', 'lrt', show_all = FALSE)
 sleuth_significant <- dplyr::filter(sleuth_table, qval <= 0.05)
 print(head(sleuth_significant, 20))
 
+
+
 write.table(sleuth_table, file='sleuthResults/sleuth_results.tsv', quote=FALSE, sep='\t', col.names = NA)
 write.table(matrix, file= "sleuthResults/normCounts.tsv", quote=FALSE, sep='\t', col.names = NA)
+sleuth_save(so, file = "sleuthResults/sleuth_object")
 
-# plot_bootstrap(so, "ENST00000291572", units = "est_counts", color_by = "condition")
-# plot_bootstrap(so, "ENST00000474114", units = "est_counts", color_by = "condition")
-# plot_bootstrap(so, "ENST00000491703", units = "est_counts", color_by = "condition")
-# plot_bootstrap(so, "ENST00000397857", units = "est_counts", color_by = "condition")
-# print("Bootstrap plots done")

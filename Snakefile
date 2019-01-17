@@ -64,10 +64,20 @@ rule sleuth_wt:
 	shell:
 		"Rscript sleuthWaldTest.R"
 
-rule boxplot_counts:
+rule sleuth_heatmap:
 	input:
-		""
+		"sleuthResults/sleuth_results.tsv"
+	output:
+		"plots/sample_heatmap.pdf"
+	conda:
+		"envs/heatmap.yaml"
+	shell:
+		"Rscript scripts/heatmap.R"
+		
 
+rule boxplot_counts:
+	input: ""
+		
 
 rule pvalue_hist:
 	input:
