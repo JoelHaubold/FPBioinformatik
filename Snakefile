@@ -56,7 +56,7 @@ rule sleuth_lrt:
 
 rule sleuth_wt:
 	input:
-		"quantOutput"
+		test=expand("quantOutput/{sample1}", sample1=SAMPLES)
 	output:
 		"sleuthResults/sleuth_wald_results.tsv"
 	conda:

@@ -4,6 +4,8 @@ suppressMessages({
 sample_id = dir(file.path(".", "quantOutput"))
 sample_id
 sample_sheet = read.table("samplesheet.tsv", header = TRUE, stringsAsFactors = FALSE)
+#allign sample_sheet sample order with file explorer order
+sample_sheet = sample_sheet[order(sample_sheet$sample),]
 print(sample_sheet)
 kal_dirs <- file.path(".", "quantOutput", sample_id)
 kal_dirs
@@ -24,11 +26,14 @@ so <- sleuth_fit(so, ~condition, 'full')
 print("full done")
 so <- sleuth_fit(so, ~1, 'reduced')
 print("reduced done")
-so <- sleuth_wt(so, 'reduced', 'full')
+models(so)
+so <- sleuth_wt(so, 'conditionuntreated')
 print("wt done")
 models(so)
+print("tests")
+tests(so)
 
-sleuth_table <- sleuth_results(so, 'reduced:full', 'wt', show_all = FALSE)
+sleuth_table <- sleuth_results(so, 'conditionuntreated', 'wt', show_all = FALSE)
 sleuth_significant <- dplyr::filter(sleuth_table, qval <= 0.05)
 print(head(sleuth_significant, 20))
 
