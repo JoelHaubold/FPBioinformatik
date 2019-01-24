@@ -3,7 +3,8 @@ testing: True
 # path to samples
 samples: /home/fp5-ws18/data/samples.tsv
 # path to reference
-reference: Tests/ref/transcriptome.chr21.fa
+reference: /home/fp5-ws18/data/homo_sapiens_transcriptome.fa.gz
+gtfReference: /home/fp5-ws18/data/homo_sapiens_transcriptome.gtf.gz
 #kallisto index flag and path to kallistoIndex (if flag True)
 indexFlag: True
 indexPath: /home/fp5-ws18/data/homo_sapiens_transcriptome.idx
