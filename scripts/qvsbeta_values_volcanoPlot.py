@@ -12,17 +12,17 @@ samples['color'] = ""
 for row in samples.index:
 	if abs(samples.loc[row,"b"])>1:
 		if samples.loc[row,"qval"]>4:
-			samples.loc[row,"color"] = 'green'
+			samples.loc[row,"color"] = 'significant & highly differential'
 		else:
-			samples.loc[row,"color"] = 'orange'
+			samples.loc[row,"color"] = 'highly differential'
 	else:
 		if samples.loc[row,"qval"]>4:
-			samples.loc[row,"color"] = 'red'
+			samples.loc[row,"color"] = 'not differential'
 		else:
-			samples.loc[row,"color"] = 'black'
+			samples.loc[row,"color"] = 'insignificant'
 	#print(samples.loc[row,"color"])
 #print(samples.loc[:,'qval'])
-palette ={"green":"g","orange":"orange","red":"r", "black":"k"}
+palette ={"significant & highly differential":"g","highly differential":"orange","not differential":"r", "insignificant":"k"}
 plot = sns.scatterplot(x = "b",y = "qval",data = samples,hue="color",palette = palette)
 for row in samples.index:
 	if samples.loc[row,"color"] == "green":
