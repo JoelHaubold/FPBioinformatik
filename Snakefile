@@ -64,7 +64,7 @@ rule sleuth_lrt:
 	conda:
 		"envs/sleuth.yaml"
 	shell:
-		"Rscript sleuth1.R" 
+		"Rscript sleuth/sleuth_lrt.R" 
 
 rule sleuth_wt:
 	input:
@@ -90,7 +90,7 @@ rule sleuth_heatmap:
 
 rule volcano_plot:
 	input:
-		"sleuthResults/sleuth_results.tsv"
+		"sleuthResults/sleuth_wald_results.tsv"
 	output:
 		"plots/qvsbeta_values_volcanoPlot.pdf"
 	conda:
