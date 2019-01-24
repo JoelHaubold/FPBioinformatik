@@ -64,17 +64,18 @@ rule sleuth_lrt:
 	conda:
 		"envs/sleuth.yaml"
 	shell:
-		"Rscript sleuth/sleuth_lrt.R" 
+		"Rscript scripts/sleuth_lrt.R" 
 
 rule sleuth_wt:
 	input:
+		so = "sleuthResults/sleuth_results.tsv",
 		test=expand("quantOutput/{sample1}", sample1=SAMPLES)
 	output:
 		"sleuthResults/sleuth_wald_results.tsv"
 	conda:
 		"envs/sleuth.yaml"
 	shell:
-		"Rscript sleuthWaldTest.R"
+		"Rscript scripts/sleuthWaldTest.R"
 
 rule sleuth_heatmap:
 	input:
