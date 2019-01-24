@@ -1,11 +1,9 @@
 # Testingflag
 testing: True
 # path to samples
-samples: samplesheet.tsv
+samples: /home/fp5-ws18/data/samples.tsv
 # path to reference
 reference: Tests/ref/transcriptome.chr21.fa
-# path to gtf
-gtfReference: Tests/ref/annotation.chr21.gtf
-#kallisto index flag and path to kallistoIndex (if flag true)
-indexFlag: False
-indexPath: genome.idx
+#kallisto index flag and path to kallistoIndex (if flag True)
+indexFlag: True
+indexPath: /home/fp5-ws18/data/homo_sapiens_transcriptome.idx

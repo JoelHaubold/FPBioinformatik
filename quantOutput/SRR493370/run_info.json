@@ -1,0 +1,13 @@
+{
+	"n_targets": 187626,
+	"n_bootstraps": 5,
+	"n_processed": 20141813,
+	"n_pseudoaligned": 18628637,
+	"n_unique": 4824467,
+	"p_pseudoaligned": 92.5,
+	"p_unique": 24.0,
+	"kallisto_version": "0.44.0",
+	"index_version": 10,
+	"start_time": "Thu Jan 24 14:46:55 2019",
+	"call": "kallisto quant -i /home/fp5-ws18/data/homo_sapiens_transcriptome.idx -o quantOutput/SRR493370 -b 5 /home/fp5-ws18/data/GSE37704/fastq/SRR493370_pass_1.fastq.gz /home/fp5-ws18/data/GSE37704/fastq/SRR493370_pass_2.fastq.gz"
+}

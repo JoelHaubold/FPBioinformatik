@@ -41,7 +41,7 @@ rule kallisto_quant:
 	output:
 		directory("quantOutput/{sample}")
 	shell:
-		"kallisto quant -i {input.inp} --fusion -o {output} -b 100 {input.fq[0]} {input.fq[1]}"
+		"kallisto quant -i {input.inp} --fusion -o {output} -b 5 {input.fq[0]} {input.fq[1]}"
 
 rule pizzly:
 	input:
