@@ -4,6 +4,8 @@ testing: True
 samples: samplesheet.tsv
 # path to reference
 reference: Tests/ref/transcriptome.chr21.fa
+# path to gtf
+gtfReference: Tests/ref/annotation.chr21.gtf
 #kallisto index flag and path to kallistoIndex (if flag true)
 indexFlag: False
 indexPath: genome.idx

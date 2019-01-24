@@ -41,7 +41,19 @@ rule kallisto_quant:
 	output:
 		directory("quantOutput/{sample}")
 	shell:
-		"kallisto quant -i {input.inp} -o {output} -b 100 {input.fq[0]} {input.fq[1]}"
+		"kallisto quant -i {input.inp} --fusion -o {output} -b 100 {input.fq[0]} {input.fq[1]}"
+
+rule pizzly:
+	input:
+		gtf = config["gtfReference"],
+		fa = config["reference"],
+		fusion = "quantOutput/{sample}",
+	output:
+		json = "pizzlyOutput/{sample}/test.json"
+	conda:
+		"envs/pizzly.yaml"
+	shell:
+		"pizzly -k 31 --gtf {input.gtf} --cache index.cache.txt --align-score 2 --insert-size 400 --fasta {input.fa} --output pizzlyOutput/{wildcards.sample}/test {input.fusion}"		
 
 rule sleuth_lrt:
 	input:
