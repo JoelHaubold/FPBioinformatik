@@ -2,8 +2,8 @@ suppressMessages({
   library("sleuth")
 })
 
-path <- file.path(".", snakemake@output[[2]])
-pathResults <- file.path(".", snakemake@output[[1]])
+path <- file.path(".", snakemake@input[[2]])
+pathResults <- file.path(".", snakemake@input[[1]])
 
 so = sleuth_load(path)
 
