@@ -126,11 +126,11 @@ rule pvalue_hist:
 
 rule mean_variance:
 	input:
-		results= "sleuthResults/sleuth_results.tsv"
-		lrt_obj= "sleuthResults/sleuth_object"
+		results= "sleuthResults/sleuth_results.tsv",
+		lrt_obj= "sleuthResults/sleuth_object",
 		wt_obj= "sleuthResults/sleuth_wald_object"
 	output:
-		"plots/mean_var_plot.pdf"
+		"plots/mean_var_plot.pdf",
 		"plots/ma_plot.pdf"
 	conda:
 		"envs/sleuth.yaml"
