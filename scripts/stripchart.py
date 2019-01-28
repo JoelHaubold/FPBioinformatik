@@ -19,7 +19,6 @@ conditions = {}
 for index, row in sample_sheet.iterrows():
     conditions[row['sample']] = row['condition']
 
-
 # Make Dictonary with Samplename as key and Condition as value
 conditions = {}
 first = ""
@@ -29,9 +28,6 @@ for index, row in sample_sheet.iterrows():
 
 
 
-
-			
-			
 
 x = counts.columns.values[1:]
 print(x)
@@ -62,19 +58,26 @@ test = pd.melt(top20)
 
 name = concat.get(['ext_gene'])
 
-top20test=top20
+top20test = top20
 
-
-
+<<<<<<< HEAD
 
 ax = sns.stripplot(data=top20, jitter=False, orient="h",palette="Set2")
 ax.set_xlabel("Normalized counts")
 ax.set_ylabel("Transcript")
 
+=======
+ax = sns.stripplot(data=top20, jitter=False, orient="h", )
+ax.set_xlabel("Normalized counts")
+ax.set_ylabel("Transcript")
+>>>>>>> a614b140ba8e36aefdbd75328b4650414514cf6f
 
 fig = ax.get_figure()
 fig.set_size_inches(16, 10.5)
 fig.suptitle('Stripchart der top20 differentiell exprimierten Gene ')
 fig.savefig('../plots/stripchart_normalized_counts.pdf')
+<<<<<<< HEAD
 
+=======
+>>>>>>> a614b140ba8e36aefdbd75328b4650414514cf6f
 
