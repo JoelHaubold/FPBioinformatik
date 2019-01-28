@@ -33,18 +33,10 @@ x_pca = pca.fit_transform(x)
 
 pca_df = pd.DataFrame(data=x_pca, columns=features)
 pca_df = pca_df.transpose()
-pca_df['Condition'] = y
+melted_df = pd.melt(pca_df)
+# pca_df['Condition'] = y
 
-fig = plt.figure(figsize=(8, 8))
-ax = fig.add_subplot(1, 1, 1)
-ax.set_xlabel('X-Axis', fontsize=15)
-ax.set_ylabel('Y-Axis', fontsize=15)
+fig = plt.scatter(x="variable", y="value", data=melted_df)
+fig.figure.savefig("../plots/pca_plot.png")
+
 colors = ['r', 'b']
-
-# for targ , color in zip(target, colors):
-
-
-print(pca_df)
-
-print("\n")
-# print(conditions)
