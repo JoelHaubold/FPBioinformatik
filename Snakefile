@@ -132,7 +132,9 @@ rule mean_variance:
 		wt_obj= "sleuthResults/sleuth_wald_object"
 	output:
 		"plots/mean_var_plot.pdf",
-		"plots/ma_plot.pdf"
+		"plots/ma_plot.pdf",
+		"plots/vars_plot.pdf",
+		"plots/group_density.pdf"
 	conda:
 		"envs/sleuth.yaml"
 	script:

@@ -19,3 +19,9 @@ print("mean variance plot done")
 tests(wt)
 pdf(snakemake@output[[2]])
 plot_ma(wt, test = "conditionscramble", test_type = "wt")
+
+pdf(snakemake@output[[3]])
+plot_vars(wt)
+
+pdf(snakemake@output[[4]])
+plot_group_density(so)
