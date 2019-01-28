@@ -8,6 +8,6 @@
 	"p_unique": 24.1,
 	"kallisto_version": "0.44.0",
 	"index_version": 10,
-	"start_time": "Thu Jan 24 14:31:40 2019",
-	"call": "kallisto quant -i /home/fp5-ws18/data/homo_sapiens_transcriptome.idx -o quantOutput/SRR493371 -b 5 /home/fp5-ws18/data/GSE37704/fastq/SRR493371_pass_1.fastq.gz /home/fp5-ws18/data/GSE37704/fastq/SRR493371_pass_2.fastq.gz"
+	"start_time": "Mon Jan 28 11:54:59 2019",
+	"call": "kallisto quant -i /home/fp5-ws18/data/homo_sapiens_transcriptome.idx --fusion -o quantOutput/SRR493371 -b 5 /home/fp5-ws18/data/GSE37704/fastq/SRR493371_pass_1.fastq.gz /home/fp5-ws18/data/GSE37704/fastq/SRR493371_pass_2.fastq.gz"
 }
