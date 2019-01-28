@@ -38,10 +38,17 @@ count = concat.get(['SRR493366'])
 
 expr = np.reshape(expr.values, len(expr))
 count = np.reshape(count.values, len(count))
+<<<<<<< HEAD
+
+test = pd.melt(top20)
+
+palette ={"treated":"g","untreated":"r"}
+=======
 
 test = pd.melt(top20)
 
 
+>>>>>>> 572def63e2e09aac81214e8007684bcc0b9ba3d9
 print("\n")
 print("quants:")
 print(quants)
@@ -56,8 +63,23 @@ print("count:")
 print(count)
 # print(name)
 # print(countb)
+<<<<<<< HEAD
+
+ax = sns.stripplot(data=top20, jitter=False, orient="h")
+ax.set_xlabel("Normalized counts")
+ax.set_ylabel("Transcript")
+#ax.axhline(y=20)
+=======
+>>>>>>> 572def63e2e09aac81214e8007684bcc0b9ba3d9
 
 ax = sns.stripplot(data=top20, jitter=True, orient="h")
 
 fig = ax.get_figure()
+fig.set_size_inches(16, 10.5)
 fig.savefig('../plots/stripchart_normalized_counts.pdf')
+<<<<<<< HEAD
+
+
+		 
+=======
+>>>>>>> 572def63e2e09aac81214e8007684bcc0b9ba3d9
