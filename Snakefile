@@ -55,6 +55,14 @@ rule pizzly:
 	shell:
 		"pizzly -k 31 --gtf {input.gtf} --cache index.cache.txt --align-score 2 --insert-size 400 --fasta {input.fa} --output pizzlyOutput/{wildcards.sample}/test {input.fusion}"		
 
+rule pizzly_flatten_json:
+	input:
+		"pizzlyOutput/{sample}/test.json"
+	output:
+		"pizzlyOutput/{sample}/something"
+	script:
+		"scripts/pizzly_flatten_json.py"
+
 rule sleuth_lrt:
 	input:
 		test=expand("quantOutput/{sample1}", sample1=SAMPLES)
