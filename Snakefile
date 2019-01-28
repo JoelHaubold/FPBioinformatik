@@ -94,7 +94,8 @@ rule sleuth_heatmap:
 		sResults = "sleuthResults/sleuth_results.tsv",
 		sObject = "sleuthResults/sleuth_object"
 	output:
-		"plots/sample_heatmap.pdf"
+		sh ="plots/sample_heatmap.pdf",
+		th ="plots/transcript_heatmap.pdf"
 	conda:
 		"envs/heatmap.yaml"
 	script:
