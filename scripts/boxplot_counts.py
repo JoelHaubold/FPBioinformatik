@@ -2,7 +2,7 @@ import seaborn as sns
 import pandas as pd
 import os
 
-path_sheet = os.path.abspath('../samplesheet.tsv')
+path_sheet = os.path.abspath(snakemake.input[0])
 sample_sheet = pd.read_table(path_sheet)
 
 # Make Dictonary with Samplename as key and Condition as value
@@ -16,7 +16,7 @@ palette = {condition: "r" if conditions[condition] == first else "g" for conditi
 sns.set_color_codes()
 
 # Read Table from File
-samples = pd.read_table("../sleuthResults/normCounts.tsv")
+samples = pd.read_table(snakemake.input[1])
 
 # Drop Gene-Names because they are unnecessary
 samples = samples.drop(samples.columns[0], axis=1)
@@ -30,4 +30,4 @@ boxplot.set(xlabel='Samples', ylabel="log (base 2) read counts + 0.5")
 boxplot.set(ylim=(0, 20))
 
 figure = boxplot.get_figure()
-figure.savefig("../plots/boxplot_sample_counts.pdf")
+figure.savefig(snakemake.output[0])

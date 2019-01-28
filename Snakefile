@@ -115,12 +115,12 @@ rule volcano_plot:
 
 rule boxplot_counts:
 	input:
-		"sleuthResults/samplesheet.tsv",
+		"samplesheet.tsv",
 		"sleuthResults/normCounts.tsv"
 	output:
 		"plots/boxplot_sample_counts.pdf"
 	conda:
-		"envs/seaborn.yaml"
+		"envs/startEnv.yaml"
 	script:
 		"scripts/boxplot_counts.py"
 		
