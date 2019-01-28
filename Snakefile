@@ -76,7 +76,8 @@ rule sleuth_lrt:
 
 rule sleuth_wt:
 	input:
-		so = "sleuthResults/sleuth_results.tsv",
+		sleuthR = "sleuthResults/sleuth_results.tsv",
+		sleuthObj = "sleuthResults/sleuth_object",
 		test=expand("quantOutput/{sample1}", sample1=SAMPLES)
 	output:
 		"sleuthResults/sleuth_wald_results.tsv"
@@ -122,3 +123,16 @@ rule pvalue_hist:
 		"envs/sleuth.yaml"
 	script:
 		"scripts/p-value_histogramm.R"
+
+rule mean_variance:
+	input:
+		results= "sleuthResults/sleuth_results.tsv",
+		lrt_obj= "sleuthResults/sleuth_object",
+		wt_obj= "sleuthResults/sleuth_wald_object"
+	output:
+		"plots/mean_var_plot.pdf",
+		"plots/ma_plot.pdf"
+	conda:
+		"envs/sleuth.yaml"
+	script:
+		"scripts/mean_var.R"

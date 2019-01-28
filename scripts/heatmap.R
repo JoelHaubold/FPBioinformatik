@@ -13,7 +13,7 @@ plot_sample_heatmap(so)
 
 
 tableShort = head(table, 50)
-pdf("snakemake@output[[1]]")
+pdf(snakemake@output[[1]])
 plot_transcript_heatmap(so, tableShort$target_id, cluster_transcripts = TRUE) 
 #, cluster_transcripts = TRUE
 
