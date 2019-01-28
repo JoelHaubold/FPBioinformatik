@@ -19,13 +19,15 @@ pathResults <- file.path(".", "sleuthResults/sleuth_results.tsv")
 
 so = sleuth_load(path)
 
-so <- sleuth_wt(so, 'conditionuntreated')
-print("wt done")
+print("models")
 models(so)
+so <- sleuth_wt(so, 'conditionscramble')
+print("wt done")
+
 print("tests")
 tests(so)
 
-sleuth_table <- sleuth_results(so, 'conditionuntreated', 'wt', show_all = FALSE)
+sleuth_table <- sleuth_results(so, 'conditionscramble', 'wt', show_all = FALSE)
 sleuth_significant <- dplyr::filter(sleuth_table, qval <= 0.05)
 print(head(sleuth_significant, 20))
 

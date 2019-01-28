@@ -14,5 +14,6 @@ plot_sample_heatmap(so)
 
 tableShort = head(table, 50)
 pdf("plots/transcript_heatmap.pdf")
-plot_transcript_heatmap(so, tableShort$target_id)
+plot_transcript_heatmap(so, tableShort$target_id, cluster_transcripts = TRUE) 
+#, cluster_transcripts = TRUE
 
