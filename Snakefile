@@ -68,7 +68,9 @@ rule sleuth_lrt:
 		test=expand("quantOutput/{sample1}", sample1=SAMPLES)
 		#directory("quantOutput")
 	output:
-		"sleuthResults/sleuth_results.tsv"
+		sleuthR = "sleuthResults/sleuth_results.tsv",
+		sleuthNorm = "sleuthResults/normCounts.tsv",
+		sleuthObj = "sleuthResults/sleuth_object"
 	conda:
 		"envs/sleuth.yaml"
 	script:
@@ -80,7 +82,8 @@ rule sleuth_wt:
 		sleuthObj = "sleuthResults/sleuth_object",
 		test=expand("quantOutput/{sample1}", sample1=SAMPLES)
 	output:
-		"sleuthResults/sleuth_wald_results.tsv"
+		"sleuthResults/sleuth_wald_results.tsv",
+		"sleuthResults/sleuth_wald_object"
 	conda:
 		"envs/sleuth.yaml"
 	script:
@@ -91,7 +94,8 @@ rule sleuth_heatmap:
 		sResults = "sleuthResults/sleuth_results.tsv",
 		sObject = "sleuthResults/sleuth_object"
 	output:
-		"plots/sample_heatmap.pdf"
+		sh ="plots/sample_heatmap.pdf",
+		th ="plots/transcript_heatmap.pdf"
 	conda:
 		"envs/heatmap.yaml"
 	script:
@@ -110,7 +114,15 @@ rule volcano_plot:
 		"scripts/qvsbeta_values_volcanoPlot.py"
 
 rule boxplot_counts:
-	input: ""
+	input:
+		"samplesheet.tsv",
+		"sleuthResults/normCounts.tsv"
+	output:
+		"plots/boxplot_sample_counts.pdf"
+	conda:
+		"envs/startEnv.yaml"
+	script:
+		"scripts/boxplot_counts.py"
 		
 
 
@@ -131,7 +143,9 @@ rule mean_variance:
 		wt_obj= "sleuthResults/sleuth_wald_object"
 	output:
 		"plots/mean_var_plot.pdf",
-		"plots/ma_plot.pdf"
+		"plots/ma_plot.pdf",
+		"plots/vars_plot.pdf",
+		"plots/group_density.pdf"
 	conda:
 		"envs/sleuth.yaml"
 	script:

@@ -9,7 +9,7 @@ path_results = os.path.abspath('../sleuthResults/sleuth_results.tsv')
 
 sns.set(style="whitegrid")
 quants = pd.read_table(path_results, nrows=20).sort_values(by=['pval'], ascending=False)
-quants.set_index('target_id', inplace=True)
+quants.set_index('ext_gene', inplace=True)
 
 counts = pd.read_table(path_counts, index_col=0)
 
@@ -54,6 +54,7 @@ count = np.reshape(count.values, len(count))
 
 test = pd.melt(top20)
 
+<<<<<<< HEAD
 name = concat.get(['ext_gene'])
 
 top20test=top20
@@ -64,11 +65,32 @@ top20test=top20
 ax = sns.stripplot(data=top20, jitter=False, orient="h",)
 ax.set_xlabel("Normalized counts")
 ax.set_ylabel("Transcript")
+=======
+
+
+print("\n")
+print("quants:")
+print(quants)
+print("\n")
+print("expr:")
+print(expr)
+print("\n")
+print("concat")
+print(concat)
+print("\n")
+print("count:")
+print(count)
+# print(name)
+# print(countb)
+>>>>>>> e781c8645039791aaded645228605fc862dc533d
 
 
 fig = ax.get_figure()
 fig.set_size_inches(16, 10.5)
 fig.suptitle('Stripchart der top20 differentiell exprimierten Gene ')
 fig.savefig('../plots/stripchart_normalized_counts.pdf')
+<<<<<<< HEAD
 
+=======
+>>>>>>> e781c8645039791aaded645228605fc862dc533d
 

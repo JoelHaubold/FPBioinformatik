@@ -49,7 +49,7 @@ print(head(sleuth_significant, 20))
 
 
 
-write.table(sleuth_table, file='sleuthResults/sleuth_results.tsv', quote=FALSE, sep='\t', col.names = NA)
-write.table(matrix, file= "sleuthResults/normCounts.tsv", quote=FALSE, sep='\t', col.names = NA)
-sleuth_save(so, file = "sleuthResults/sleuth_object")
+write.table(sleuth_table, file=snakemake@output[[1]], quote=FALSE, sep='\t', col.names = NA)
+write.table(matrix, file= snakemake@output[[2]], quote=FALSE, sep='\t', col.names = NA)
+sleuth_save(so, file = snakemake@output[[3]])
 

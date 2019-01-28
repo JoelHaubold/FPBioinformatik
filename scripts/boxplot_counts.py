@@ -13,21 +13,21 @@ for index, row in sample_sheet.iterrows():
     first = row['condition']
 palette = {condition: "r" if conditions[condition] == first else "g" for condition in conditions}
 
-
 sns.set_color_codes()
-tips = sns.load_dataset("tips")
 
 # Read Table from File
 samples = pd.read_table("../sleuthResults/normCounts.tsv")
 
 # Drop Gene-Names because they are unnecessary
 samples = samples.drop(samples.columns[0], axis=1)
-# Test Boxplot if 0 values are removed
+# Melt Dataframe into two Columns variable (Samplename) and the value
 melt_samples = pd.melt(samples)
+# Remove 0 values
 samples = melt_samples.loc[melt_samples.value != 0]
-
-boxplot = sns.boxplot(x="variable", y="value", data=samples, palette=palette)
+# Create Boxplot
+boxplot = sns.boxplot(x="variable", y="value", data=samples, palette=palette, fliersize=0)
 boxplot.set(xlabel='Samples', ylabel="log (base 2) read counts + 0.5")
 boxplot.set(ylim=(0, 20))
+
 figure = boxplot.get_figure()
-figure.savefig("../plots/boxplot_sample_counts.png")
+figure.savefig("../plots/boxplot_sample_counts.pdf")
