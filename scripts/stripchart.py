@@ -9,7 +9,7 @@ path_results = os.path.abspath('../sleuthResults/sleuth_results.tsv')
 
 sns.set(style="whitegrid")
 quants = pd.read_table(path_results, nrows=20).sort_values(by=['pval'], ascending=False)
-quants.set_index('ext_gene', inplace=True)
+quants.set_index('target_id', inplace=True)
 
 counts = pd.read_table(path_counts, index_col=0)
 
@@ -26,17 +26,17 @@ first = ""
 for index, row in sample_sheet.iterrows():
     conditions[row['sample']] = row['condition']
     first = row['condition']
-palette = {condition: "r" if conditions[condition] == first else "g" for condition in conditions}
 
-print(counts.iloc(0))
+
+
 
 			
 			
 
 x = counts.columns.values[1:]
-# print(x)
-# print("\n")
-# print(conditions)
+print(x)
+print("\n")
+print(conditions)
 
 gene_name = pd.read_table
 # print(quants.head())
@@ -47,6 +47,12 @@ concat = pd.concat([quants, counts], axis=1, join='inner').sort_values(by=['pval
 top20 = concat.drop(concat.columns[range(14)], axis=1)
 top20 = top20.transpose()
 
+print(concat)
+print(top20) 
+
+#top20.columns['NIPSNAP1','ARID3A','NOTCH2','PLHDA1','NT5E','EN01','ANXA1','SOX4','SCG2','TNFRSF21','SLC2A3','PGM2L1','VCAN','MBTPS1','PLK2','CDKN1A','PARP1','STOM','F2RL1','EPAS1']
+
+
 expr = concat.get(['pval'])
 count = concat.get(['SRR493366'])
 expr = np.reshape(expr.values, len(expr))
@@ -54,7 +60,6 @@ count = np.reshape(count.values, len(count))
 
 test = pd.melt(top20)
 
-<<<<<<< HEAD
 name = concat.get(['ext_gene'])
 
 top20test=top20
@@ -62,35 +67,14 @@ top20test=top20
 
 
 
-ax = sns.stripplot(data=top20, jitter=False, orient="h",)
+ax = sns.stripplot(data=top20, jitter=False, orient="h",palette="Set2")
 ax.set_xlabel("Normalized counts")
 ax.set_ylabel("Transcript")
-=======
-
-
-print("\n")
-print("quants:")
-print(quants)
-print("\n")
-print("expr:")
-print(expr)
-print("\n")
-print("concat")
-print(concat)
-print("\n")
-print("count:")
-print(count)
-# print(name)
-# print(countb)
->>>>>>> e781c8645039791aaded645228605fc862dc533d
 
 
 fig = ax.get_figure()
 fig.set_size_inches(16, 10.5)
 fig.suptitle('Stripchart der top20 differentiell exprimierten Gene ')
 fig.savefig('../plots/stripchart_normalized_counts.pdf')
-<<<<<<< HEAD
 
-=======
->>>>>>> e781c8645039791aaded645228605fc862dc533d
 
