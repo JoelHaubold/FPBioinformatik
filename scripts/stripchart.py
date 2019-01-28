@@ -14,7 +14,6 @@ counts = pd.read_table(path_counts,index_col=0)
 
 sample_sheet = pd.read_table(path_sheet)
 
-# Make Dictonary with Samplename as key and Condition as value
 conditions = {}
 for index, row in sample_sheet.iterrows():
 	conditions[row['sample']] = row['condition']
@@ -31,20 +30,27 @@ gene_name = pd.read_table
 concat=pd.concat([quants, counts],axis=1,join='inner').sort_values(by=['pval'],ascending=False)
 name = concat.get(['ext_gene'])
 expr = concat.get(['pval'])
-count = concat.get(['a'])
-#countb = concat.get(['b'])
+count = concat.get(['SRR493366'])
 
+print("\n")
+print("quants:")
+print(quants)
+print("\n")
+print("expr:")
+print(expr)
+print("\n")
 #print(concat)
-#print(count)
+print("count:")
+print(count)
+#print(name)
 #print(countb)
 
-ax=sns.stripplot(  y=count, data=quants ,jitter=False, orient="h")
-#bx=sns.stripplot(  y=countb, data=quants ,jitter=False, orient="h")
+ax=sns.stripplot( x=expr, data=quants ,jitter=True, orient="h")
+
 
 fig = ax.get_figure()
 fig.savefig('../plots/stripchart_normalized_counts.pdf')
 
-#fig2 =bx.get_figure()
-#fig2.savefig('Top20b.png')
+
 
 		 
