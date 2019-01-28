@@ -87,7 +87,8 @@ rule sleuth_wt:
 
 rule sleuth_heatmap:
 	input:
-		"sleuthResults/sleuth_results.tsv"
+		sResults = "sleuthResults/sleuth_results.tsv",
+		sObject = "sleuthResults/sleuth_object"
 	output:
 		"plots/sample_heatmap.pdf"
 	conda:
@@ -119,5 +120,5 @@ rule pvalue_hist:
 		"plots/p-values_histogramm.pdf"
 	conda:
 		"envs/sleuth.yaml"
-	shell:
-		"Rscript scripts/p-value_histogramm.R"
+	script:
+		"scripts/p-value_histogramm.R"
