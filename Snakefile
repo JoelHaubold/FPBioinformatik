@@ -76,7 +76,8 @@ rule sleuth_lrt:
 
 rule sleuth_wt:
 	input:
-		so = "sleuthResults/sleuth_results.tsv",
+		sleuthR = "sleuthResults/sleuth_results.tsv",
+		sleuthObj = "sleuthResults/sleuth_object",
 		test=expand("quantOutput/{sample1}", sample1=SAMPLES)
 	output:
 		"sleuthResults/sleuth_wald_results.tsv"
