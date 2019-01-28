@@ -5,9 +5,12 @@ import math
 
 path = os.path.abspath('sleuthResults/sleuth_wald_results.tsv')
 samples = pd.read_table(path)
+sns.set(rc={'figure.figsize':(15.7,11.27)})
+sns.set_style("white")
+#sns.set_style("ticks")
 
 #print(samples.loc[:,'qval'])
-samples.loc[:,'qval'] = samples.loc[:,'qval'].apply(lambda x: -math.log10(x))
+samples.loc[:,'qval'] = samples.loc[:,'qval'].apply(lambda x: -math.log10(x) if x!= 0 else -math.log10(1.1928109419438e-302))
 samples['color'] = ""
 for row in samples.index:
 	if abs(samples.loc[row,"b"])>1:
@@ -23,7 +26,7 @@ for row in samples.index:
 	#print(samples.loc[row,"color"])
 #print(samples.loc[:,'qval'])
 palette ={"significant & highly differential":"g","highly differential":"orange","not differential":"r", "insignificant":"k"}
-plot = sns.scatterplot(x = "b",y = "qval",data = samples,hue="color",palette = palette)
+plot = sns.scatterplot(x = "b",y = "qval",linewidth=0,data = samples,hue="color",palette = palette)
 for row in samples.index:
 	if samples.loc[row,"color"] == "green":
 		plot.text(samples.loc[row,"b"]+0.05, samples.loc[row,"qval"]+0.05, samples.loc[row,"target_id"], horizontalalignment='left', size='small', color='black')#, weight='semibold')
