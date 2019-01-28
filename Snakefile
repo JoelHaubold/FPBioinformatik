@@ -110,7 +110,15 @@ rule volcano_plot:
 		"scripts/qvsbeta_values_volcanoPlot.py"
 
 rule boxplot_counts:
-	input: ""
+	input:
+		"sleuthResults/samplesheet.tsv",
+		"sleuthResults/normCounts.tsv"
+	output:
+		"plots/boxplot_sample_counts.pdf"
+	conda:
+		"envs/seaborn.yaml"
+	script:
+		"scripts/boxplot_counts.py"
 		
 
 

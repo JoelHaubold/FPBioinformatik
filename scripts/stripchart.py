@@ -9,7 +9,7 @@ path_results = os.path.abspath('../sleuthResults/sleuth_results.tsv')
 
 sns.set(style="whitegrid")
 quants = pd.read_table(path_results, nrows=20).sort_values(by=['pval'], ascending=False)
-quants.set_index('target_id', inplace=True)
+quants.set_index('ext_gene', inplace=True)
 
 counts = pd.read_table(path_counts, index_col=0)
 
