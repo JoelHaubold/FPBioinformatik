@@ -82,7 +82,8 @@ rule sleuth_wt:
 		sleuthObj = "sleuthResults/sleuth_object",
 		test=expand("quantOutput/{sample1}", sample1=SAMPLES)
 	output:
-		"sleuthResults/sleuth_wald_results.tsv"
+		"sleuthResults/sleuth_wald_results.tsv",
+		"sleuthResults/sleuth_wald_object"
 	conda:
 		"envs/sleuth.yaml"
 	script:
