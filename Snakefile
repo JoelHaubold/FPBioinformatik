@@ -59,7 +59,7 @@ rule pizzly_flatten_json:
 	input:
 		"pizzlyOutput/{sample}/test.json"
 	output:
-		"pizzlyOutput/{sample}/something"
+		"pizzlyOutput/{sample}/flattenedJson"
 	script:
 		"scripts/pizzly_flatten_json.py"
 
@@ -71,8 +71,8 @@ rule sleuth_lrt:
 		"sleuthResults/sleuth_results.tsv"
 	conda:
 		"envs/sleuth.yaml"
-	shell:
-		"Rscript scripts/sleuth_lrt.R" 
+	script:
+		"scripts/sleuth_lrt.R" 
 
 rule sleuth_wt:
 	input:
@@ -82,8 +82,8 @@ rule sleuth_wt:
 		"sleuthResults/sleuth_wald_results.tsv"
 	conda:
 		"envs/sleuth.yaml"
-	shell:
-		"Rscript scripts/sleuthWaldTest.R"
+	script:
+		"scripts/sleuthWaldTest.R"
 
 rule sleuth_heatmap:
 	input:
@@ -92,8 +92,8 @@ rule sleuth_heatmap:
 		"plots/sample_heatmap.pdf"
 	conda:
 		"envs/heatmap.yaml"
-	shell:
-		"Rscript scripts/heatmap.R"
+	script:
+		"scripts/heatmap.R"
 		
 
 
@@ -104,8 +104,8 @@ rule volcano_plot:
 		"plots/qvsbeta_values_volcanoPlot.pdf"
 	conda:
 		"envs/sleuth.yaml"
-	shell:
-		"python scripts/qvsbeta_values_volcanoPlot.py"
+	script:
+		"scripts/qvsbeta_values_volcanoPlot.py"
 
 rule boxplot_counts:
 	input: ""
