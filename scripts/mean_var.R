@@ -6,7 +6,7 @@ suppressMessages({
 
 #path <- file.path(".", "sleuthResults/sleuth_object")
 #path2 <- file.path(".", "sleuthResults/sleuth_wald_object")
-#pathResults <- file.path(".", "sleuthResults/sleuth_results.tsv")
+#pathResults <- file.path(".", "sleuthResult  s/sleuth_results.tsv")
 
 so = sleuth_load(snakemake@input[[2]])
 wt = sleuth_load(snakemake@input[[3]])
