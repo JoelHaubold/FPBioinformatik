@@ -1,5 +1,6 @@
 import seaborn as sns
 import pandas as pd
+import numpy as np
 import os
 
 path_counts = os.path.abspath('../sleuthResults/normCounts.tsv')
@@ -13,6 +14,8 @@ quants.set_index('target_id',inplace=True)
 counts = pd.read_table(path_counts,index_col=0)
 
 sample_sheet = pd.read_table(path_sheet)
+
+
 
 conditions = {}
 for index, row in sample_sheet.iterrows():
@@ -28,10 +31,21 @@ gene_name = pd.read_table
 #print(counts.head())
 #target_id = pd.read_table(("FPBioinformatik/sleuthResults/sleuth_results.tsv"), index_col="target_id")
 concat=pd.concat([quants, counts],axis=1,join='inner').sort_values(by=['pval'],ascending=False)
+
+top20=concat.drop(concat.columns[range(14)],axis=1)
+top20.iloc[::-1]
+
 name = concat.get(['ext_gene'])
 expr = concat.get(['pval'])
 count = concat.get(['SRR493366'])
 
+expr= np.reshape(expr.values,len(expr))
+count = np.reshape(count.values,len(count))
+
+test=pd.melt(top20)
+
+print(test)
+exit(1)
 print("\n")
 print("quants:")
 print(quants)
@@ -39,13 +53,15 @@ print("\n")
 print("expr:")
 print(expr)
 print("\n")
-#print(concat)
+print("concat")
+print(concat)
+print("\n")
 print("count:")
 print(count)
 #print(name)
 #print(countb)
 
-ax=sns.stripplot( x=expr, data=quants ,jitter=True, orient="h")
+ax=sns.stripplot(  data=top20 ,jitter=True, orient="h")
 
 
 fig = ax.get_figure()
