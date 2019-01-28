@@ -68,8 +68,8 @@ rule sleuth_lrt:
 		test=expand("quantOutput/{sample1}", sample1=SAMPLES)
 		#directory("quantOutput")
 	output:
-		sleuthR = "sleuthResults/sleuth_results.tsv"
-		sleuthNorm = "sleuthResults/normCounts.tsv"
+		sleuthR = "sleuthResults/sleuth_results.tsv",
+		sleuthNorm = "sleuthResults/normCounts.tsv",
 		sleuthObj = "sleuthResults/sleuth_object"
 	conda:
 		"envs/sleuth.yaml"
