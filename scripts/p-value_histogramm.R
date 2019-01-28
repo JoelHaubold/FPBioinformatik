@@ -1,9 +1,9 @@
-path <- file.path(".", "sleuthResults/sleuth_results.tsv")
+path <- file.path(".", snakemake@input[[1]])
 savepath <- file.path(".", "plots")
 table <- read.table(path, header = TRUE, stringsAsFactors = FALSE)
 print(table)
 
-pdf("plots/p-values_histogramm.pdf")
+pdf(snakemake@output[[1]])
 #hist(table$pval)
 hist(table$pval, 
      main="Histogram of p-values", 

@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import math
 
-path = os.path.abspath('sleuthResults/sleuth_wald_results.tsv')
+path = os.path.abspath(snakemake.input[0])
 samples = pd.read_table(path)
 sns.set(rc={'figure.figsize':(15.7,11.27)})
 sns.set_style("white")
@@ -32,4 +32,4 @@ for row in samples.index:
 		plot.text(samples.loc[row,"b"]+0.05, samples.loc[row,"qval"]+0.05, samples.loc[row,"target_id"], horizontalalignment='left', size='small', color='black')#, weight='semibold')
 #figure = plot.get_figure()
 plot.set(xlabel='beta_value', ylabel='-log10(q_value)')
-plot.get_figure().savefig("plots/qvsbeta_values_volcanoPlot.pdf")
+plot.get_figure().savefig(snakemake.output[0])
