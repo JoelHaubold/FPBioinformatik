@@ -68,8 +68,8 @@ rule sleuth_lrt:
 		test=expand("quantOutput/{sample1}", sample1=SAMPLES)
 		#directory("quantOutput")
 	output:
-		sleuthR = "sleuthResults/sleuth_results.tsv"
-		sleuthNorm = "sleuthResults/normCounts.tsv"
+		sleuthR = "sleuthResults/sleuth_results.tsv",
+		sleuthNorm = "sleuthResults/normCounts.tsv",
 		sleuthObj = "sleuthResults/sleuth_object"
 	conda:
 		"envs/sleuth.yaml"
@@ -94,7 +94,8 @@ rule sleuth_heatmap:
 		sResults = "sleuthResults/sleuth_results.tsv",
 		sObject = "sleuthResults/sleuth_object"
 	output:
-		"plots/sample_heatmap.pdf"
+		sh ="plots/sample_heatmap.pdf",
+		th ="plots/transcript_heatmap.pdf"
 	conda:
 		"envs/heatmap.yaml"
 	script:
