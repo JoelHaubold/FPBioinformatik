@@ -1,7 +1,7 @@
 # Testingflag
 testing: True
-# path to samples
-samples: /home/fp5-ws18/data/samples.tsv
+# path to samplesheet
+samples: ./samplesheet.tsv
 # path to reference
 reference: /home/fp5-ws18/data/homo_sapiens_transcriptome.fa.gz
 gtfReference: /home/fp5-ws18/data/homo_sapiens_transcriptome.gtf.gz

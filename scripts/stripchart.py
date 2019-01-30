@@ -3,9 +3,9 @@ import pandas as pd
 import numpy as np
 import os
 
-path_counts = os.path.abspath('../sleuthResults/normCounts.tsv')
-path_sheet = os.path.abspath('../samplesheet.tsv')
-path_results = os.path.abspath('../sleuthResults/sleuth_results.tsv')
+path_counts = os.path.abspath(snakemake.input[1])
+path_sheet = os.path.abspath(snakemake.input[0])
+path_results = os.path.abspath(snakemake.input[2])
 
 sns.set(style="whitegrid")
 quants = pd.read_table(path_results, nrows=20).sort_values(by=['pval'], ascending=False)
@@ -60,24 +60,24 @@ name = concat.get(['ext_gene'])
 
 top20test = top20
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
 
-ax = sns.stripplot(data=top20, jitter=False, orient="h",palette="Set2")
-ax.set_xlabel("Normalized counts")
-ax.set_ylabel("Transcript")
+#ax = sns.stripplot(data=top20, jitter=False, orient="h",palette="Set2")
+#ax.set_xlabel("Normalized counts")
+#ax.set_ylabel("Transcript")
 
-=======
+#=======
 ax = sns.stripplot(data=top20, jitter=False, orient="h", )
 ax.set_xlabel("Normalized counts")
 ax.set_ylabel("Transcript")
->>>>>>> a614b140ba8e36aefdbd75328b4650414514cf6f
+#>>>>>>> a614b140ba8e36aefdbd75328b4650414514cf6f
 
 fig = ax.get_figure()
 fig.set_size_inches(16, 10.5)
 fig.suptitle('Stripchart der top20 differentiell exprimierten Gene ')
-fig.savefig('../plots/stripchart_normalized_counts.pdf')
-<<<<<<< HEAD
+fig.savefig(snakemake.output[0])
+#<<<<<<< HEAD
 
-=======
->>>>>>> a614b140ba8e36aefdbd75328b4650414514cf6f
+#=======
+#>>>>>>> a614b140ba8e36aefdbd75328b4650414514cf6f
 

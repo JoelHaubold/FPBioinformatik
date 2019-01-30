@@ -10,7 +10,7 @@ suppressMessages({
 
 so = sleuth_load(snakemake@input[[2]])
 wt = sleuth_load(snakemake@input[[3]])
-table <- read.table(pathResults, header = TRUE, stringsAsFactors = FALSE)
+#table <- read.table(pathResults, header = TRUE, stringsAsFactors = FALSE)
 
 pdf(snakemake@output[[1]])
 plot_mean_var(so)

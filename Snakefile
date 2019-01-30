@@ -1,5 +1,5 @@
 import pandas as pd
-
+#shell.executable("/bin/bash")
 
 configfile: "config.yaml"
 
@@ -22,6 +22,20 @@ def get_input():
 	if config["indexFlag"]:
 		return config["indexPath"]
 	return "genome.idx"	
+
+rule all:
+	input:
+		"plots/mean_var_plot.pdf",
+		"plots/ma_plot.pdf",
+		"plots/vars_plot.pdf",
+		"plots/group_density.pdf",
+		"plots/p-values_histogramm.pdf",
+		"plots/boxplot_sample_counts.pdf",
+		"plots/qvsbeta_values_volcanoPlot.pdf",
+		"plots/sample_heatmap.pdf",
+		"plots/transcript_heatmap.pdf",
+		"plots/pca_plot.png",
+		"plots/stripchart_normalized_counts.pdf"
 
 rule kallisto_index:
 	input:
@@ -101,8 +115,6 @@ rule sleuth_heatmap:
 	script:
 		"scripts/heatmap.R"
 		
-
-
 rule volcano_plot:
 	input:
 		"sleuthResults/sleuth_wald_results.tsv"
@@ -120,12 +132,32 @@ rule boxplot_counts:
 	output:
 		"plots/boxplot_sample_counts.pdf"
 	conda:
-		"envs/startEnv.yaml"
+		"envs/pySeaLearn.yaml"
 	script:
 		"scripts/boxplot_counts.py"
+rule pca_plot:
+	input:
+		"samplesheet.tsv",
+		"sleuthResults/normCounts.tsv"
+	output:
+		"plots/pca_plot.png"
+	conda:
+		"envs/pySeaLearn.yaml"
+	script:
+		"scripts/pca_plot.py"
+rule stripchart:
+	input:
+		"samplesheet.tsv",
+		"sleuthResults/normCounts.tsv",
+		"sleuthResults/sleuth_results.tsv"
+	output:
+		"plots/stripchart_normalized_counts.pdf"
+	conda:
+		"envs/pySeaLearn.yaml"
+	script:
+		"scripts/stripchart.py"
 		
-
-
+		
 rule pvalue_hist:
 	input:
 		"sleuthResults/sleuth_results.tsv"
@@ -136,7 +168,7 @@ rule pvalue_hist:
 	script:
 		"scripts/p-value_histogramm.R"
 
-rule mean_variance:
+rule sleuth_plots:
 	input:
 		results= "sleuthResults/sleuth_results.tsv",
 		lrt_obj= "sleuthResults/sleuth_object",
@@ -150,3 +182,18 @@ rule mean_variance:
 		"envs/sleuth.yaml"
 	script:
 		"scripts/mean_var.R"
+rule plot_all:
+	input:
+		"plots/mean_var_plot.pdf",
+		"plots/ma_plot.pdf",
+		"plots/vars_plot.pdf",
+		"plots/group_density.pdf",
+		"plots/p-values_histogramm.pdf",
+		"plots/boxplot_sample_counts.pdf",
+		"plots/qvsbeta_values_volcanoPlot.pdf",
+		"plots/sample_heatmap.pdf",
+		"plots/transcript_heatmap.pdf",
+		"plots/pca_plot.png",
+		"plots/stripchart_normalized_counts.pdf"
+		
+

@@ -1,7 +1,7 @@
 path <- file.path(".", snakemake@input[[1]])
 savepath <- file.path(".", "plots")
 table <- read.table(path, header = TRUE, stringsAsFactors = FALSE)
-print(table)
+
 
 pdf(snakemake@output[[1]])
 #hist(table$pval)

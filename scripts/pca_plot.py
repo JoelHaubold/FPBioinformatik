@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 
 from sklearn.decomposition import PCA
 
-path_counts = os.path.abspath('../sleuthResults/normCounts.tsv')
+path_counts = os.path.abspath(snakemake.input[1])
 samples = pd.read_table(path_counts)
 
-path_sheet = os.path.abspath('../samplesheet.tsv')
+path_sheet = os.path.abspath(snakemake.input[0])
 sample_sheet = pd.read_table(path_sheet)
 
 # Make Dictonary with Samplename as key and Condition as value
@@ -37,6 +37,6 @@ melted_df = pd.melt(pca_df)
 # pca_df['Condition'] = y
 
 fig = plt.scatter(x="variable", y="value", data=melted_df)
-fig.figure.savefig("../plots/pca_plot.png")
+fig.figure.savefig(snakemake.output[0])
 
 colors = ['r', 'b']
