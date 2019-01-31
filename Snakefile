@@ -31,9 +31,7 @@ rule all:
 		"plots/group_density.pdf",
 		"plots/p-values_histogramm.pdf",
 		"plots/boxplot_sample_counts.pdf",
-		"plots/qvsbeta_values_volcanoPlot.pdf",
-		"plots/sample_heatmap.pdf",
-		"plots/transcript_heatmap.pdf",
+		"plots/qvsbeta_values_volcanoPlot.pdf",	
 		"plots/pca_plot.png",
 		"plots/stripchart_normalized_counts.pdf"
 
