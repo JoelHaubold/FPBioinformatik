@@ -2,13 +2,13 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from sklearn.decomposition import PCA
+from sklearn import manifold
+
 # Get Paths
 path_counts = os.path.abspath(snakemake.input[1])
 samples = pd.read_table(path_counts)
 path_sheet = os.path.abspath(snakemake.input[0])
 sample_sheet = pd.read_table(path_sheet)
-
 
 # Make Dictonary with Samplename as key and Condition as value
 conditions = {}
@@ -27,19 +27,16 @@ for condition in y:
         target.append(condition)
 # Get values in order
 x = samples.loc[:, features].values
-x = x.transpose()
-# Create pca-Arry
-pca = PCA()
-x_pca = pca.fit_transform(x)
-# Create DataFrame from pca-Array
-pca_df = pd.DataFrame(data=x_pca, columns=features)
-# Transpose Dataframe
+# Create t-sne Array
+t_sne = manifold.TSNE(n_iter=300)
+x_sne = t_sne.fit_transform(x)
+
+pca_df = pd.DataFrame(data=x_sne, columns=features)
 pca_df = pca_df.transpose()
-# Melt it into a DataFrame with two Columns 'variable' containing the index of the transcript and 'value' for the values
 melted_df = pd.melt(pca_df)
 # pca_df['Condition'] = y
 
 fig = plt.scatter(x="variable", y="value", data=melted_df)
-fig.figure.savefig(snakemake.output[0])
+fig.figure.savefig("../plots/t-sne_plot.png")
 
 colors = ['r', 'b']
