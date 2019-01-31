@@ -1,5 +1,5 @@
 # Testingflag
-testing: True
+testing: False
 # path to samplesheet
 samples: ./samplesheet.tsv
 # path to reference
