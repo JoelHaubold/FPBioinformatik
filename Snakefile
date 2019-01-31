@@ -121,7 +121,7 @@ rule volcano_plot:
 	output:
 		"plots/qvsbeta_values_volcanoPlot.pdf"
 	conda:
-		"envs/sleuth.yaml"
+		"envs/pySeaLearn.yaml"
 	script:
 		"scripts/qvsbeta_values_volcanoPlot.py"
 
@@ -135,6 +135,7 @@ rule boxplot_counts:
 		"envs/pySeaLearn.yaml"
 	script:
 		"scripts/boxplot_counts.py"
+
 rule pca_plot:
 	input:
 		"samplesheet.tsv",
@@ -145,6 +146,7 @@ rule pca_plot:
 		"envs/pySeaLearn.yaml"
 	script:
 		"scripts/pca_plot.py"
+
 rule stripchart:
 	input:
 		"samplesheet.tsv",

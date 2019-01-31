@@ -1,0 +1,3 @@
+WorkflowError in line 4 of /home/haubol00/FPBioInf/FPBioinformatik/Snakefile:
+Config file config.yaml not found.
+  File "/home/haubol00/FPBioInf/FPBioinformatik/Snakefile", line 4, in <module>
