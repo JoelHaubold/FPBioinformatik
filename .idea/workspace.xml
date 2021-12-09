@@ -2,73 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fff228e-399e-421c-a2cf-3806745b3127" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/plots/boxplot_sample_counts.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snakefile" beforeDir="false" afterPath="$PROJECT_DIR$/Snakefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/envs/seaborn.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/envs/startEnv.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/envs/startEnv.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/boxplot_sample_counts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/qvsbeta_values_volcanoPlot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/plots/qvsbeta_values_volcanoPlot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/stripchart_normalized_counts.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/plots/stripchart_normalized_counts.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/boxplot_counts.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/boxplot_counts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/stripchart.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/stripchart.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/boxplot_counts.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/stripchart.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Snakefile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-209">
-              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/pca_plot.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plots/pca_plot.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -89,6 +28,7 @@
     <option name="width" value="1920" />
     <option name="height" value="1053" />
   </component>
+  <component name="ProjectId" id="2230kWnbB9KPtQ1G8Di9cIamelH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -124,6 +64,10 @@
       </pane>
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -136,19 +80,7 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.pca_plot">
+  <component name="RunManager">
     <configuration name="boxplot_counts" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FPBioinformatik" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -212,14 +144,8 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.pca_plot" />
-        <item itemvalue="Python.stripchart" />
-        <item itemvalue="Python.boxplot_counts" />
-      </list>
-    </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -257,32 +183,6 @@
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="right" id="R Packages" order="4" />
     </layout>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/boxplot_counts.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/boxplot_counts.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/pca_plot.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/pca_plot.py</url>
-          <line>35</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/sleuth1.R" />
